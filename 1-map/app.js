@@ -4,10 +4,10 @@ const persons = [
     { id: 1, name: "Вася" },
   ];
 
-  function isFilterPersons (arr){
+  function getUniqPersons (arr){
     const arrString = arr.map(item => JSON.stringify(item))
     const arrSet = new Set(arrString)
     return [...arrSet].map(item => JSON.parse(item))
   }
-  console.log(new Set(isFilterPersons(persons)));
+  console.log(new Set(getUniqPersons(persons)));
   
