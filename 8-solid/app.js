@@ -1,29 +1,29 @@
-class Biling {
+class Billing {
   amount = 5;
   calculateTotal() {}
 }
 
-class FixBiling extends Biling {
+class FixBiling extends Billing {
   calculateTotal() {
     return this.amount;
   }
 }
 
-class HourBiling extends Biling {
+class HourBilling extends Billing {
   calculateTotal(hours) {
     return this.amount * hours;
   }
 }
 
-class ItemBiling extends Biling {
+class ItemBilling extends Billing {
   calculateTotal(el) {
     return this.amount * el.length;
   }
 }
 
-const fixBiling = new FixBiling();
-const hourBiling = new HourBiling();
-const itemBiling = new ItemBiling();
-console.log(fixBiling.calculateTotal());
-console.log(hourBiling.calculateTotal(new Date().getHours()));
-console.log(itemBiling.calculateTotal([1, 2, 3, 4, 5]));
+const fixBilling = new FixBiling();
+const hourBilling = new HourBilling();
+const itemBilling = new ItemBilling();
+console.log(fixBilling.calculateTotal());
+console.log(hourBilling.calculateTotal(new Date().getHours()));
+console.log(itemBilling.calculateTotal([1, 2, 3, 4, 5]));
