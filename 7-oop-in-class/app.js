@@ -11,9 +11,9 @@ class Person {
 }
 
 class Orc extends Person {
-  constructor(race, name, lang,weapon) {
+  constructor(race, name, lang, weapon) {
     super(race, name, lang);
-    this.weapon = weapon
+    this.weapon = weapon;
   }
 
   punch() {
@@ -22,9 +22,9 @@ class Orc extends Person {
 }
 
 class Elf extends Person {
-  constructor(race, name, lang,spell) {
+  constructor(race, name, lang, spell) {
     super(race, name, lang);
-    this.spell = spell
+    this.spell = spell;
   }
 
   createspell() {
@@ -33,8 +33,8 @@ class Elf extends Person {
 }
 
 const person = new Person();
-const orc = new Orc("Орк", "Тралл", "Лок Тар'огар", 'Топором');
-const elf = new Elf("Эльф", "Иллидан", "В атаку!","Oгненный шар");
+const orc = new Orc("Орк", "Тралл", "Лок Тар'огар", "Топором");
+const elf = new Elf("Эльф", "Иллидан", "В атаку!", "Oгненный шар");
 
 orc.speak();
 orc.punch();
