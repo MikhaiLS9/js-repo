@@ -11,13 +11,9 @@ class Person {
 }
 
 class Orc extends Person {
-  weapon = "Топором";
-  constructor(race, name, lang) {
+  constructor(race, name, lang,weapon) {
     super(race, name, lang);
-  }
-
-  speak() {
-    console.log(`${this.name} : ${this.lang}`);
+    this.weapon = weapon
   }
 
   punch() {
@@ -26,13 +22,9 @@ class Orc extends Person {
 }
 
 class Elf extends Person {
-  spell = "Oгненный шар";
-  constructor(race, name, lang) {
+  constructor(race, name, lang,spell) {
     super(race, name, lang);
-  }
-
-  speak() {
-    console.log(`${this.name} : ${this.lang}`);
+    this.spell = spell
   }
 
   createspell() {
@@ -41,8 +33,8 @@ class Elf extends Person {
 }
 
 const person = new Person();
-const orc = new Orc("Орк", "Тралл", "Лок Тар'огар");
-const elf = new Elf("Эльф", "Иллидан", "В атаку!");
+const orc = new Orc("Орк", "Тралл", "Лок Тар'огар", 'Топором');
+const elf = new Elf("Эльф", "Иллидан", "В атаку!","Oгненный шар");
 
 orc.speak();
 orc.punch();

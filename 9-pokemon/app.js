@@ -1,17 +1,31 @@
-const request = new XMLHttpRequest();
-request.open("GET", "https://pokeapi.co/api/v2/pokemon/ditto");
-request.send();
 
-request.addEventListener("load", function () {
-  const { abilities } = JSON.parse(this.responseText);
-  console.log(abilities[0]);
+const DITTO_POKEMON_DATA_URL = 'https://pokeapi.co/api/v2/pokemon/ditto';
+const DITTO_POKEMON_ABILITY_URL = "https://pokeapi.co/api/v2/ability/7/"
 
-  const request = new XMLHttpRequest();
-  request.open("GET", "https://pokeapi.co/api/v2/ability/7/");
-  request.send();
+function findDittoAbilityUrl(){
+  const dittoDataRequest = new XMLHttpRequest();
+  dittoDataRequest.open("GET", DITTO_POKEMON_DATA_URL);
 
-  request.addEventListener("load", function () {
-    const { effect_entries } = JSON.parse(this.responseText);
-    console.log(effect_entries[1]);
-  });
-});
+  dittoDataRequest.onload = function(){
+    const data = JSON.parse(dittoDataRequest.response);
+    console.log(data.abilities[0].ability.url);
+  }
+
+  dittoDataRequest.send();
+}
+
+findDittoAbilityUrl()
+
+function getDittoAbilityInfo(){
+  const dittoAbilityRequest = new XMLHttpRequest();
+  dittoAbilityRequest.open("GET", DITTO_POKEMON_ABILITY_URL);
+
+  dittoAbilityRequest.onload = function(){
+  const data = JSON.parse(dittoAbilityRequest.response)
+  console.log(data['effect_entries'][1]);
+}
+
+dittoAbilityRequest.send();
+}
+
+getDittoAbilityInfo()
