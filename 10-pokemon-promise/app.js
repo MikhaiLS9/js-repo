@@ -4,9 +4,9 @@ function getDittoAbilityInfo() {
 fetch(DITTO_POKEMON_DATA_URL)
 .then(response => response.json())
 .then(data => {
-    const DITTO_POKEMON_ABILITY_URL = "https://pokeapi.co/api/v2/ability/7/"
+    const dittoPokemonAbilitityUrl = "https://pokeapi.co/api/v2/ability/7/"
     console.log(data.abilities[0].ability.url)
-    return fetch(DITTO_POKEMON_ABILITY_URL)
+    return fetch(dittoPokemonAbilitityUrl)
 })
 .then(response => response.json())
 .then(data => console.log(data.effect_entries[1]))
